@@ -2,29 +2,48 @@ import Button from "../common/Button";
 import Card from "../common/Card";
 import CardSection from "../common/CardSection";
 
-const FeatureSection = () => {
+interface FeatureSectionProps {
+    content: typeof import('../../constants/featureConstant').FEATURE_CONTENT
+    onGalleryButtonClick: () => void
+    onDiaryButtonClick: () => void
+    onTipsButtonClick: () => void
+}
+
+const FeatureSection = ({ content, onGalleryButtonClick, onDiaryButtonClick, onTipsButtonClick }: FeatureSectionProps) => {
+    const handleButtonClick = (index: number) => {
+        switch (index) {
+            case 0:
+                onGalleryButtonClick()
+                break
+            case 1:
+                onDiaryButtonClick()
+                break
+            case 2:
+                onTipsButtonClick()
+                break
+            default:
+                console.warn('Unknown button index: ', index)
+        }
+    }
+    
     return (
-        <div id="features">
+        <div id="features" className="pb-16">
             <CardSection
-                title="Features"
-                subtitle="다양한 기능 제공. 잘 될거임. 내가 만들었으니까."
-                columns={3}
+                title={content.title}
+                subtitle={content.subtitle}
+                columns={content.columns}
             >
-                <Card hover>
-                    <h3 className="text-lg font-semibold mb-2">Gallery</h3>
-                    <p className="text-gray-600 mb-4">내 사진.</p>
-                    <Button variant="primary" size="small">보러 오던가</Button>
-                </Card>
-                <Card hover>
-                    <h3 className="text-lg font-semibold mb-2">Diary</h3>
-                    <p className="text-gray-600 mb-4">내 일기.</p>
-                    <Button variant="primary" size="small">읽으러 오던가</Button>
-                </Card>
-                <Card hover>
-                    <h3 className="text-lg font-semibold mb-2">Tips</h3>
-                    <p className="text-gray-600 mb-4">고양이 팁.</p>
-                    <Button variant="primary" size="small">확인하러 오던가</Button>
-                </Card>
+                {content.items.map((item, index) => (
+                    <Card key={item.title} hover>
+                        <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                        <p className="text-gray-600 mb-4">{item.description}</p>
+                        <Button 
+                            variant="primary" 
+                            size="small"
+                            onClick={() => handleButtonClick(index)}
+                        >{item.buttonText}</Button>
+                    </Card>
+                ))}
             </CardSection>
         </div>
     )
