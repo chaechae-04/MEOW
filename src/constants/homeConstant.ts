@@ -7,4 +7,4 @@ const HERO_CONTANT = {
     featureButtonText: "이걸 눌러라.",
 } as const
 
-export {HERO_CONTANT }
+export { HERO_CONTANT }
