@@ -38,7 +38,7 @@ function Header() {
                     </Link>
 
                     {/* Navigation */}
-                    <nav className="flex items-center space-x-6 mx-50">
+                    <nav className="flex items-center space-x-6 mx-50 sm:mx-10">
                         {/* Home Link */}
                         <Button 
                             variant="noneBorder" 
@@ -69,7 +69,7 @@ function Header() {
                                                 </div>
                                                 <div>
                                                     <Button 
-                                                        variant="noneBorder" 
+                                                        variant="ghost" 
                                                         size="small" 
                                                         onClick={() => handleNavigationClick(index)} 
                                                         className="font-semibold text-gray-900"

@@ -1,8 +1,8 @@
 const HERO_CONTENT = {
     title: "엄청난 디지털 왕국. 고양이만 출입가능.",
     subtitle: "내 사진. 내 일기. 내 모든 것. 모두 여기에.",
-    primaryButtonText: "사진 보러가기",
-    secondaryButtonText: "다른 기능 보러가기",
+    primaryButtonText: "엄청난 사진 보러가기",
+    secondaryButtonText: "다른 개쩌는 기능 보러가기",
     featureBannerText: "이런 엄청난 페이지를 만든사람이 궁금하다면",
     featureButtonText: "이걸 눌러라.",
 } as const
