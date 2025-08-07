@@ -2,49 +2,29 @@ import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Link } from 'react-router-dom'
 import Button from '../common/Button'
+import { NAVIGATION_ITEMS, ADDITIONAL_ACTIONS } from '../../constants/navigationConstant'
+import useNavigation from '../../hooks/useNavigation'
 
-interface HeaderProps {
-    navigationItems: typeof import('../../constants/navigationConstant').NAVIGATION_ITEMS
-    additionalActions: typeof import('../../constants/navigationConstant').ADDITIONAL_ACTIONS
-    onHomeClick: () => void
-    onGalleryClick: () => void
-    onDiaryClick: () => void
-    onTipsClick: () => void
-    onUploadClick: () => void
-    onAboutClick: () => void
-}
+function Header() {
 
-function Header({ navigationItems, additionalActions, onHomeClick, onGalleryClick, onDiaryClick, onTipsClick, onUploadClick, onAboutClick }: HeaderProps) {
+    const { goToHome, goToGallery, goToDiary, goToTips, goToUpload, goToAbout } = useNavigation()
+
+    const navigationHandlers = [goToHome, goToGallery, goToDiary, goToTips]
+    const additionalActionHandlers = [goToUpload, goToAbout]
 
     const handleNavigationClick = (index: number) => {
-        switch (index) {
-            case 0:
-                onHomeClick()
-                break
-            case 1:
-                onGalleryClick()
-                break
-            case 2:
-                onDiaryClick()
-                break
-            case 3:
-                onTipsClick()
-                break
-            default:
-                console.warn('Unknown button index: ', index)
+        if (navigationHandlers[index]) {
+            navigationHandlers[index]()
+        } else {
+            console.warn('Unknown navigation index: ', index)
         }
     }
 
     const handleAdditionalActionClick = (index: number) => {
-        switch (index) {
-            case 0:
-                onUploadClick()
-                break
-            case 1:
-                onAboutClick()
-                break
-            default:
-                console.warn('Unknown button index: ', index)
+        if (additionalActionHandlers[index]) {
+            additionalActionHandlers[index]()
+        } else {
+            console.warn('Unknown additional action index: ', index)
         }
     }
 
@@ -60,13 +40,10 @@ function Header({ navigationItems, additionalActions, onHomeClick, onGalleryClic
                     {/* Navigation */}
                     <nav className="flex items-center space-x-6 mx-50">
                         {/* Home Link */}
-                        {/* <Link to="/" className="mr-10 text-gray-600 hover:text-gray-800 font-medium hover:text-blue-600 transition-colors">
-                            집
-                        </Link> */}
                         <Button 
                             variant="noneBorder" 
                             size="small" 
-                            onClick={onHomeClick} 
+                            onClick={goToHome} 
                             className="mr-10 text-gray-600 hover:text-gray-800 font-medium hover:text-blue-600 transition-colors"
                         >
                             Home
@@ -85,7 +62,7 @@ function Header({ navigationItems, additionalActions, onHomeClick, onGalleryClic
                             >
                                 <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm/6 shadow-lg ring-1 ring-gray-900/5">
                                     <div className="p-4">
-                                        {navigationItems.map((item, index) => (
+                                        {NAVIGATION_ITEMS.map((item, index) => (
                                             <div key={item.name} className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
                                                 <div className="mt-1 flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                                                     <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
@@ -105,7 +82,7 @@ function Header({ navigationItems, additionalActions, onHomeClick, onGalleryClic
                                         ))}
                                     </div>
                                     <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                                        {additionalActions.map((item, index) => (
+                                        {ADDITIONAL_ACTIONS.map((item, index) => (
                                             <Button 
                                                 variant="noneBorder" 
                                                 size="small" 

@@ -15,13 +15,13 @@ const HomePage = () => {
         <PageLayout>
             <HeroSection 
                 content={HERO_CONTANT}
-                onPrimaryClick={() => {goToGallery()}}
+                onPrimaryClick={goToGallery}
             />
             <FeatureSection 
                 content={FEATURE_CONTENT}
-                onGalleryButtonClick={() => {goToGallery()}}
-                onDiaryButtonClick={() => {goToDiary()}}
-                onTipsButtonClick={() => {goToTips()}}
+                onGalleryButtonClick={goToGallery}
+                onDiaryButtonClick={goToDiary}
+                onTipsButtonClick={goToTips}
             />
         </PageLayout>
     )
