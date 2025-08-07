@@ -5,6 +5,7 @@ interface CardProps {
     className?: string
     padding?: 'none' | 'small' | 'medium' | 'large'
     shadow?: 'none' | 'small' | 'medium' | 'large'
+    rounded?: 'none' | 'small' | 'medium' | 'large' | 'full'
     hover?: boolean
     onClick?: () => void
 }
@@ -15,6 +16,7 @@ const Card = ({
     padding = 'medium',
     shadow = 'medium',
     hover = false,
+    rounded = 'large',
     onClick,
 }: CardProps) => {
     
@@ -32,15 +34,24 @@ const Card = ({
         large: "shadow-lg"
     }
 
+    const roundedClasses = {
+        none: "",
+        small: "rounded-sm",
+        medium: "rounded-md",
+        large: "rounded-lg",
+        full: "rounded-full"
+    }
+
     const hoverClasses = hover ? "hover:shadow-lg transition-shadow cursor-pointer" : ""
 
     return (
         <div
             className={`
-                bg-white rounded-lg border border-gray-200
+                bg-white border border-gray-200
                 ${paddingClasses[padding]}
                 ${shadowClasses[shadow]}
                 ${hoverClasses}
+                ${roundedClasses[rounded]}
                 ${className}
             `}
             onClick={onClick}
