@@ -2,7 +2,7 @@ import React from 'react'
 
 interface ButtonProps {
     children: React.ReactNode;
-    variant?: 'primary' | 'secondary' | 'danger' | 'ghost' |  'success'
+    variant?: 'primary' | 'secondary' | 'danger' | 'ghost' |  'success' | 'noneBorder'
     size?: 'small' | 'medium' | 'large'
     className?: string
     onClick?: () => void
@@ -29,7 +29,8 @@ const Button = ({
         secondary: "bg-gray-600 hover:bg-gray-700 text-white focus:ring-gray-500",
         danger: "bg-red-600 hover:bg-red-700 text-white focus:ring-red-500",
         ghost: "bg-transparent hover:bg-gray-100 text-gray-700 border border-gray-300 focus:ring-gray-500",
-        success: "bg-green-600 hover:bg-green-700 text-white focus:ring-green-500"
+        success: "bg-green-600 hover:bg-green-700 text-white focus:ring-green-500",
+        noneBorder: "bg-transparent hover:bg-gray-100 text-gray-700 focus:ring-gray-500"
     }
 
     const sizeClasses = {
