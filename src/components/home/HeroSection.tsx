@@ -1,16 +1,23 @@
 import Button from "../common/Button";
 import { useScrollTo } from "../../hooks/useScrollTo";
+import { HERO_CONTENT } from "../../constants/homeConstant";
 
 interface HeroSectionProps {
-    content: typeof import('../../constants/homeConstant').HERO_CONTANT
+    content?: typeof HERO_CONTENT
     onPrimaryClick: () => void
 }
 
-function HeroSection({ content, onPrimaryClick }: HeroSectionProps) {
+function HeroSection({ content = HERO_CONTENT, onPrimaryClick }: HeroSectionProps) {
     const scrollToElement = useScrollTo()
 
-    const handleFeatureClick = () => {
-        scrollToElement('features')
+    const handleFeatureClick = (index: number) => {
+        if (index === 0) {
+            scrollToElement('features')
+        } else if (index === 1) {
+            scrollToElement('team')
+        } else {
+            console.warn('Unknown button index: ', index)
+        }
     }
 
     return (
@@ -23,7 +30,7 @@ function HeroSection({ content, onPrimaryClick }: HeroSectionProps) {
                             <Button
                                 variant="noneBorder"
                                 size="small"
-                                onClick={handleFeatureClick}
+                                onClick={() => handleFeatureClick(1)}
                             >
                                 <span aria-hidden="true" className="absolute inset-0" />
                                 {content.featureButtonText} <span aria-hidden='true'>&rarr;</span>
@@ -48,7 +55,7 @@ function HeroSection({ content, onPrimaryClick }: HeroSectionProps) {
                             <Button
                                 variant="ghost"
                                 size="medium"
-                                onClick={handleFeatureClick}
+                                onClick={() => handleFeatureClick(0)}
                             >
                                 {content.secondaryButtonText} <span aria-hidden="true">→</span>
                             </Button>

@@ -1,15 +1,16 @@
 import Button from "../common/Button";
 import Card from "../common/Card";
 import CardSection from "../common/CardSection";
+import { FEATURE_CONTENT } from "../../constants/featureConstant";
 
 interface FeatureSectionProps {
-    content: typeof import('../../constants/featureConstant').FEATURE_CONTENT
+    content?: typeof FEATURE_CONTENT
     onGalleryButtonClick: () => void
     onDiaryButtonClick: () => void
     onTipsButtonClick: () => void
 }
 
-const FeatureSection = ({ content, onGalleryButtonClick, onDiaryButtonClick, onTipsButtonClick }: FeatureSectionProps) => {
+const FeatureSection = ({ content = FEATURE_CONTENT, onGalleryButtonClick, onDiaryButtonClick, onTipsButtonClick }: FeatureSectionProps) => {
     const handleButtonClick = (index: number) => {
         switch (index) {
             case 0:
