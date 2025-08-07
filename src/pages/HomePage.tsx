@@ -1,5 +1,7 @@
 import useNavigation from "../hooks/useNavigation";
 
+import PageLayout from "../components/common/PageLayout";
+
 import HeroSection from "../components/home/HeroSection";
 import { HERO_CONTANT } from "../constants/homeConstant";
 import FeatureSection from "../components/home/FeatureSection";
@@ -10,7 +12,7 @@ const HomePage = () => {
     const { goToGallery, goToDiary, goToTips } = useNavigation()
 
     return (
-        <div className="container mx-auto px-4">
+        <PageLayout>
             <HeroSection 
                 content={HERO_CONTANT}
                 onPrimaryClick={() => {goToGallery()}}
@@ -21,7 +23,7 @@ const HomePage = () => {
                 onDiaryButtonClick={() => {goToDiary()}}
                 onTipsButtonClick={() => {goToTips()}}
             />
-        </div>
+        </PageLayout>
     )
 }
 

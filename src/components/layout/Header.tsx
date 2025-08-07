@@ -63,7 +63,12 @@ function Header({ navigationItems, additionalActions, onHomeClick, onGalleryClic
                         {/* <Link to="/" className="mr-10 text-gray-600 hover:text-gray-800 font-medium hover:text-blue-600 transition-colors">
                             집
                         </Link> */}
-                        <Button variant="noneBorder" size="small" onClick={onHomeClick} className="mr-10 text-gray-600 hover:text-gray-800 font-medium hover:text-blue-600 transition-colors">
+                        <Button 
+                            variant="noneBorder" 
+                            size="small" 
+                            onClick={onHomeClick} 
+                            className="mr-10 text-gray-600 hover:text-gray-800 font-medium hover:text-blue-600 transition-colors"
+                        >
                             Home
                         </Button>
 
@@ -86,7 +91,12 @@ function Header({ navigationItems, additionalActions, onHomeClick, onGalleryClic
                                                     <item.icon aria-hidden="true" className="size-6 text-gray-600 group-hover:text-indigo-600" />
                                                 </div>
                                                 <div>
-                                                    <Button variant="noneBorder" size="small" onClick={() => handleNavigationClick(index)} className="font-semibold text-gray-900">
+                                                    <Button 
+                                                        variant="noneBorder" 
+                                                        size="small" 
+                                                        onClick={() => handleNavigationClick(index)} 
+                                                        className="font-semibold text-gray-900"
+                                                    >
                                                         {item.name}
                                                     </Button>
                                                     <p className="mt-1 text-gray-600">{item.description}</p>
@@ -96,7 +106,12 @@ function Header({ navigationItems, additionalActions, onHomeClick, onGalleryClic
                                     </div>
                                     <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                                         {additionalActions.map((item, index) => (
-                                            <Button variant="noneBorder" size="small" onClick={() => handleAdditionalActionClick(index)} className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100">
+                                            <Button 
+                                                variant="noneBorder" 
+                                                size="small" 
+                                                onClick={() => handleAdditionalActionClick(index)} 
+                                                className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
+                                            >
                                                 <item.icon aria-hidden="true" className="size-5 flex-none text-gray-400" />
                                                 {item.name}
                                             </Button>

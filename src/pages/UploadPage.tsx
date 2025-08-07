@@ -1,8 +1,10 @@
+import PageLayout from "../components/common/PageLayout";
+
 const UploadPage = () => {
     return (
-        <div className="container mx-auto px-4 py-8">
+        <PageLayout>
             <h1>Upload Page</h1>
-        </div>
+        </PageLayout>
     )
 }
 
