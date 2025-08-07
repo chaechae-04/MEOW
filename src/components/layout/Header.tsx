@@ -33,12 +33,12 @@ function Header() {
             <div className="w-full px-4 py-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link to="/" className="text-2xl font-bold text-gray-800 ml-25 sm:ml-0 md:ml-0 hover:text-blue-600 transition-colors">
+                    <Link to="/" className="text-2xl font-bold text-gray-800 sm:ml-0 md:ml-0 lg:ml-25 xl:ml-25 hover:text-blue-600 transition-colors">
                         MEOW
                     </Link>
 
                     {/* Navigation */}
-                    <nav className="flex items-center space-x-6 mx-50 sm:mx-0 md:mx-0">
+                    <nav className="flex items-center space-x-6 sm:mx-0 md:mx-0 lg-mx-25 xl:mx-50">
                         {/* Home Link */}
                         <Button 
                             variant="noneBorder" 
