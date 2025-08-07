@@ -9,19 +9,22 @@ const HERO_CONTENT = {
 
 const TEAM_CONTENT = {
     title: "위대한 페이지를 만든 팀원들",
-    subtitle: "내가 혼자 만들었다.",
+    subtitle: "내가 혼자 만들었다. 나는 위대하니까-.",
     items: [
         {
             name: "이채채",
             description: "PM, FE",
+            imageUrl: "1VbrNwbt9jMsRPjc024Ni57XzyboqidqE"
         },
         {
             name: "chaechae",
             description: "BE, TL",
+            imageUrl: "1vAcyMOPHGy7CfHDX_shIDLuX0Pau-PSb"
         },
         {
             name: "채채",
             description: "Designer",
+            imageUrl: "1oXBdIu5RetEt016gahxDaP4OSPrd5_4M"
         }
     ]
 } as const

@@ -21,7 +21,7 @@ function HeroSection({ content = HERO_CONTENT, onPrimaryClick }: HeroSectionProp
     }
 
     return (
-        <div className="bg-white">
+        <div className="bg-white pb-24">
             <div className="relative isolate px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl py-12 sm:py-24 lg:py-30">
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">

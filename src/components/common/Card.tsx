@@ -42,7 +42,7 @@ const Card = ({
         full: "rounded-full"
     }
 
-    const hoverClasses = hover ? "hover:shadow-lg transition-shadow cursor-pointer" : ""
+    const hoverClasses = hover ? "hover:shadow-xl hover:scale-105 hover:bg-gray-50 hover:border-gray-300 transition-all duration-200 ease-in-out cursor-pointer transform" : ""
 
     return (
         <div

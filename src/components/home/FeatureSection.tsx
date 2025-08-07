@@ -28,7 +28,7 @@ const FeatureSection = ({ content = FEATURE_CONTENT, onGalleryButtonClick, onDia
     }
     
     return (
-        <div id="features" className="pb-16">
+        <div id="features" className="py-24">
             <CardSection
                 title={content.title}
                 subtitle={content.subtitle}
