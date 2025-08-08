@@ -14,17 +14,17 @@ const TEAM_CONTENT = {
         {
             name: "이채채",
             description: "PM, FE",
-            imageUrl: "1VbrNwbt9jMsRPjc024Ni57XzyboqidqE"
+            imageUrl: ""
         },
         {
             name: "chaechae",
             description: "BE, TL",
-            imageUrl: "1vAcyMOPHGy7CfHDX_shIDLuX0Pau-PSb"
+            imageUrl: ""
         },
         {
             name: "채채",
             description: "Designer",
-            imageUrl: "1oXBdIu5RetEt016gahxDaP4OSPrd5_4M"
+            imageUrl: ""
         }
     ]
 } as const
