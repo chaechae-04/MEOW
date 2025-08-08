@@ -9,7 +9,7 @@ const HERO_CONTENT = {
 
 const TEAM_CONTENT = {
     title: "위대한 페이지를 만든 팀원들",
-    subtitle: "내가 혼자 만들었다. 나는 위대하니까-.",
+    subtitle: "내가 혼자 만들었다. 나는 멋쟁이니까-.",
     items: [
         {
             name: "이채채",
