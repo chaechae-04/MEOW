@@ -24,7 +24,8 @@ function HeroSection({ content = HERO_CONTENT, onPrimaryClick }: HeroSectionProp
         <div className="bg-white pb-24">
             <div className="relative isolate px-6 lg:px-8">
                 <div className="mx-auto max-w-2xl py-12 sm:py-24 lg:py-30">
-                    <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+                    {/* <div className="hidden sm:mb-8 sm:flex sm:justify-center"> */}
+                    <div className="mb-8 flex justify-center">
                         <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                             {content.featureBannerText}{' '}
                             <Button
