@@ -55,7 +55,6 @@ export const useDiary = () => {
             })
 
             await fetchEntries()
-            // return docRef.id  // 이 줄 제거
         } catch (error) {
             console.error('Error adding diary:', error)
             throw error
